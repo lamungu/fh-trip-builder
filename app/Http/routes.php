@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix'=>'api/v1', 'middleware' => 'web'], function() {
+   Route::get('airports','AirportController@index');
+});

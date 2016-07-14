@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.sass('app.scss');
 
     mix.scripts([
-        '../../../bower_components/dist/jquery.js',
+        '../../../bower_components/jquery/dist/jquery.js',
         '../../../bower_components/Materialize/bin/materialize.js'
     ]);
 });
