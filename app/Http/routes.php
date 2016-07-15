@@ -16,12 +16,19 @@ Route::get('/', function () {
 });
 Route::group(['prefix'=>'api/v1', 'middleware' => 'api'], function() {
 
+   // Get all the airports
    Route::get('airports',     'AirportController@index');
+
+
+   // Show trip with all its flights
    Route::get('trips/{id}',   'TripController@show');
-
-   Route::post('trips/{id}',  'FlightController@store');
-   Route::delete('trips/{id}','FlightController@destroy');
-
+   // Change trip name
    Route::put('trips/{id}',   'TripController@update');
+
+
+   // Add a flight to the trip
+   Route::post('trips/{id}/flights',  'FlightController@store');
+   // Delete the flight
+   Route::delete('trips/{id}/flights','FlightController@destroy');
 
 });

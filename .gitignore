@@ -5,5 +5,6 @@
 Homestead.yaml
 Homestead.json
 composer.lock
+/public/fonts
 /.idea
 .env

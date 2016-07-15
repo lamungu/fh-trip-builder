@@ -18,4 +18,5 @@ elixir(function(mix) {
         '../../../bower_components/jquery/dist/jquery.js',
         '../../../bower_components/Materialize/bin/materialize.js'
     ]);
+    mix.copy('bower_components/Materialize/fonts','public/fonts');
 });

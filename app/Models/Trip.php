@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trip extends Model
 {
+    public $timestamps = false;
+
     public function flights() {
         return $this->hasMany('App\Models\Flight','trip_id','id');
     }
