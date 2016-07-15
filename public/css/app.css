@@ -6086,4 +6086,10 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 
+.trip-name {
+  font-size: 2.5rem !important;
+  font-weight: 100;
+  text-transform: capitalize;
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important; }
+
 /*# sourceMappingURL=app.css.map */

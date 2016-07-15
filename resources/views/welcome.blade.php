@@ -30,7 +30,12 @@
             </div>
 
             <div class="card-panel trip">
-                <h4 class="trip-name"></h4>
+                <div class="input-field col m9">
+                    <input type="text" id="trip-name" class="trip-name col s6">
+                </div>
+                <div class="input-field col m3">
+                    <a class="btn updateTrip">Rename</a>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -80,7 +85,7 @@
                 url: '/api/v1/trips/1',
                 type:'GET',
                 success: function(data) {
-                    $('.trip-name').html(data.name);
+                    $('.trip-name').val(data.name);
                     $.each(data.flights, function(i,item) {
                         $('tbody.flights').append("<tr><td>" +
                             item.origin +
@@ -134,7 +139,23 @@
                     });
                 });
 
-                // Remove a flight from a trip
+                // Rename a trip
+                $(".updateTrip").click(function () {
+                    var data = {
+                        'name': $('#trip-name').val()
+                    };
+                    $.ajax({
+                        url: '/api/v1/trips/1',
+                        type:'PUT',
+                        data: data,
+                        success: function(data) {
+                            console.log(data);
+                        },
+                        error: function() {
+                            console.log(error);
+                        }
+                    });
+                });
 
                 $('select').material_select();
             });
