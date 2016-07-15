@@ -12,6 +12,6 @@ class AirportController extends Controller
     // I've taken the airport data from OpenFlights database, and trimmed it down
     // To what is important. This gets all of whats in the database that way
     public function index() {
-        return response()->json(Airport::all());
+        return response()->json(Airport::orderBy('icao')->get());
     }
 }
