@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Flight extends Model
 {
     //
+    public $timestamps = false;
     protected $appends = ['origin','destination'];
     protected $hidden = ['trip_id','from','from_id','to_id','to'];
 
