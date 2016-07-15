@@ -105,6 +105,8 @@
                             data: data,
                             success: function(data) {
                                 console.log(data);
+                                location.reload();
+                            });
                             },
                             error: function() {
                                 console.log(error);
@@ -132,6 +134,8 @@
                         data: flight,
                         success: function(data) {
                             console.log(data);
+                            location.reload();
+                        });
                         },
                         error: function() {
                             console.log(error);
@@ -150,6 +154,8 @@
                         data: data,
                         success: function(data) {
                             console.log(data);
+                            location.reload();
+                        });
                         },
                         error: function() {
                             console.log(error);
