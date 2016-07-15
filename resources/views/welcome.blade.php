@@ -106,7 +106,6 @@
                             success: function(data) {
                                 console.log(data);
                                 location.reload();
-                            });
                             },
                             error: function() {
                                 console.log(error);
@@ -135,7 +134,6 @@
                         success: function(data) {
                             console.log(data);
                             location.reload();
-                        });
                         },
                         error: function() {
                             console.log(error);
@@ -155,7 +153,6 @@
                         success: function(data) {
                             console.log(data);
                             location.reload();
-                        });
                         },
                         error: function() {
                             console.log(error);
