@@ -46,7 +46,6 @@
                         </tr>
                     </thead>
                     <tbody class="flights">
-
                     </tbody>
                 </table>
             </div>
@@ -87,7 +86,25 @@
                             item.origin +
                             "</td><td>" +
                             item.destination +
-                            "</td><td><button class='btn'>Remove</button></td>");
+                            "</td><td>" +
+                            "<a data-id='" + item.id + "' class='btn removeFlight'>Remove</a></td>");
+                    });
+                    $(".removeFlight").click(function () {
+                        var flight = $(".removeFlight")[ ($(this).index('a') - 1)];
+                        var data = {
+                            'flight_id': $(flight).data('id')
+                        };
+                        $.ajax({
+                            url: '/api/v1/trips/1/flights',
+                            type:'DELETE',
+                            data: data,
+                            success: function(data) {
+                                console.log(data);
+                            },
+                            error: function() {
+                                console.log(error);
+                            }
+                        });
                     });
                 },
                 error: function(error) {
@@ -95,26 +112,30 @@
                 }
             });
 
-            // Add Flight to Trip
-            $('.addFlight').click(function () {
-                var flight = {
-                    "origin": $("#origin").val(),
-                    "destination": $("#destination").val()
-                };
-                $.ajax({
-                    url: '/api/v1/trips/1/flights',
-                    type:'POST',
-                    data: flight,
-                    success: function(data) {
-                        console.log(data);
-                    },
-                    error: function() {
-                        console.log(error);
-                    }
-                });
-            });
 
+
+            // Add Flight to Trip
             $(document).ready(function() {
+                $(".addFlight").click(function () {
+                    var flight = {
+                        "origin": $("#origin").val(),
+                        "destination": $("#destination").val()
+                    };
+                    $.ajax({
+                        url: '/api/v1/trips/1/flights',
+                        type:'POST',
+                        data: flight,
+                        success: function(data) {
+                            console.log(data);
+                        },
+                        error: function() {
+                            console.log(error);
+                        }
+                    });
+                });
+
+                // Remove a flight from a trip
+
                 $('select').material_select();
             });
         </script>
