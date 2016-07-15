@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Api Trip Builder</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <link href="css/app.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="container">
+            <div class="row">
+                <h1>Trip Builder <small style="font-size:2rem">By Benjamin Lofo Follo</small></h1>
+            </div>
             <div class="card-panel row">
                 <div class="col s12">
                     <form>
