@@ -11,10 +11,8 @@ use App\Models\Flight;
 
 class FlightController extends Controller
 {
-    //
     public function store($id, StoreRequest $request) {
         $flight = new Flight;
-
         $flight->trip_id = $id;
         $flight->from_id = $request->origin;
         $flight->to_id = $request->destination;
@@ -23,9 +21,7 @@ class FlightController extends Controller
         return response()->json(['status' => 'OK','data' => $flight]);
     }
     public function destroy($id, DeleteRequest $request) {
-
         Flight::destroy($request->flight_id);
-
         return response()->json(['status' => 'OK']);
     }
 }
